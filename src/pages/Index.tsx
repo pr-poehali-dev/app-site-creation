@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   const portfolioApps = [
     {
       title: "Fitness Tracker",
@@ -66,87 +55,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Icon 
-                name="Smartphone" 
-                size={32} 
-                className={scrolled ? "text-black" : "text-white"} 
-              />
-              <h1 className={`text-2xl font-bold transition-colors duration-300 ${
-                scrolled ? "text-black" : "text-white"
-              }`}>
-                MobileDev
-              </h1>
-            </div>
-            
-            <nav className="hidden md:flex items-center space-x-8">
-              <a 
-                href="#home" 
-                className={`transition-colors cursor-pointer ${
-                  scrolled 
-                    ? "text-black hover:text-gray-600" 
-                    : "text-white hover:text-gray-300"
-                }`}
-              >
-                Главная
-              </a>
-              <a 
-                href="#advantages" 
-                className={`transition-colors cursor-pointer ${
-                  scrolled 
-                    ? "text-black hover:text-gray-600" 
-                    : "text-white hover:text-gray-300"
-                }`}
-              >
-                Преимущества
-              </a>
-              <a 
-                href="#portfolio" 
-                className={`transition-colors cursor-pointer ${
-                  scrolled 
-                    ? "text-black hover:text-gray-600" 
-                    : "text-white hover:text-gray-300"
-                }`}
-              >
-                Портфолио
-              </a>
-              <a 
-                href="#pricing" 
-                className={`transition-colors cursor-pointer ${
-                  scrolled 
-                    ? "text-black hover:text-gray-600" 
-                    : "text-white hover:text-gray-300"
-                }`}
-              >
-                Цены
-              </a>
-              <a 
-                href="#contacts" 
-                className={`transition-colors cursor-pointer ${
-                  scrolled 
-                    ? "text-black hover:text-gray-600" 
-                    : "text-white hover:text-gray-300"
-                }`}
-              >
-                Контакты
-              </a>
-            </nav>
-
-            <div className="md:hidden">
-              <button className={scrolled ? "text-black" : "text-white"}>
-                <Icon name="Menu" size={24} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
-      <section id="home" className="bg-black text-white py-20 px-4 pt-32">
+      <section className="bg-black text-white py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold mb-6">Создание мобильных приложений</h1>
@@ -187,7 +97,7 @@ const Index = () => {
       </section>
 
       {/* Advantages Section */}
-      <section id="advantages" className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-black">Наши преимущества</h2>
@@ -246,7 +156,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Carousel */}
-      <section id="portfolio" className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-black">Наше портфолио</h2>
@@ -281,7 +191,7 @@ const Index = () => {
       </section>
 
       {/* Purchase Offer */}
-      <section id="pricing" className="py-20 px-4 bg-black text-white">
+      <section className="py-20 px-4 bg-black text-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -335,7 +245,7 @@ const Index = () => {
       </section>
 
       {/* Contacts & Social */}
-      <section id="contacts" className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-black">Свяжитесь с нами</h2>
