@@ -67,55 +67,77 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Fixed Header */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-black/80 backdrop-blur-md shadow-lg' 
-            : 'bg-transparent'
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Icon name="Smartphone" size={32} className="text-white" />
-              <h1 className="text-2xl font-bold text-white">MobileDev</h1>
+              <Icon 
+                name="Smartphone" 
+                size={32} 
+                className={scrolled ? "text-black" : "text-white"} 
+              />
+              <h1 className={`text-2xl font-bold transition-colors duration-300 ${
+                scrolled ? "text-black" : "text-white"
+              }`}>
+                MobileDev
+              </h1>
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
               <a 
                 href="#home" 
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className={`transition-colors cursor-pointer ${
+                  scrolled 
+                    ? "text-black hover:text-gray-600" 
+                    : "text-white hover:text-gray-300"
+                }`}
               >
                 Главная
               </a>
               <a 
                 href="#advantages" 
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className={`transition-colors cursor-pointer ${
+                  scrolled 
+                    ? "text-black hover:text-gray-600" 
+                    : "text-white hover:text-gray-300"
+                }`}
               >
                 Преимущества
               </a>
               <a 
                 href="#portfolio" 
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className={`transition-colors cursor-pointer ${
+                  scrolled 
+                    ? "text-black hover:text-gray-600" 
+                    : "text-white hover:text-gray-300"
+                }`}
               >
                 Портфолио
               </a>
               <a 
                 href="#pricing" 
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className={`transition-colors cursor-pointer ${
+                  scrolled 
+                    ? "text-black hover:text-gray-600" 
+                    : "text-white hover:text-gray-300"
+                }`}
               >
                 Цены
               </a>
               <a 
                 href="#contacts" 
-                className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                className={`transition-colors cursor-pointer ${
+                  scrolled 
+                    ? "text-black hover:text-gray-600" 
+                    : "text-white hover:text-gray-300"
+                }`}
               >
                 Контакты
               </a>
             </nav>
 
             <div className="md:hidden">
-              <button className="text-white">
+              <button className={scrolled ? "text-black" : "text-white"}>
                 <Icon name="Menu" size={24} />
               </button>
             </div>
